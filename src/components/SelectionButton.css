@@ -1,0 +1,53 @@
+.SelectionButton{
+    display: inline-block;
+}
+
+.circle{
+    border-radius: 100%;
+}
+
+.outer{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner{
+    margin-top: 11px;
+    height: 75px;
+    width: 75px;
+    background-color: white;
+    box-shadow: inset 0px 5px 0px 0px #BCBFD2;
+    display:flex;
+}
+
+.inner img{
+    margin: auto; /* this is creating a gap between certain buttons */
+    transform: scale(.8);
+}
+
+.rock{
+    background-color: hsl(349, 70%, 56%);
+    box-shadow: inset 0px -5px 0px 0px #9D1732;
+}
+
+.paper{
+    background-color: hsl(230, 89%, 65%);
+    box-shadow: inset 0px -5px 0px 0px #2740BF;
+}
+
+.scissors{
+    background-color: hsl(40, 84%, 53%);
+    box-shadow: inset 0px -5px 0px 0px #C86B1B;
+}
+
+.lizard{
+    background-color: hsl(261, 72%, 63%);
+    box-shadow: inset 0px -5px 0px 0px #5F34A8;
+}
+
+.spock{
+    background-color: hsl(189, 58%, 57%);
+    box-shadow: inset 0px -5px 0px 0px #2E90AD;
+}
