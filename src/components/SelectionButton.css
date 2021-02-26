@@ -1,5 +1,6 @@
 .SelectionButton{
-    display: inline-block;
+    height: 100px;
+    width: 100px;
 }
 
 .circle{
@@ -7,16 +8,16 @@
 }
 
 .outer{
-    height: 100px;
-    width: 100px;
+    height:100%;
+    width:100%;
     display: flex;
     justify-content: center;
 }
 
 .inner{
     margin-top: 11px;
-    height: 75px;
-    width: 75px;
+    height: 75%;
+    width: 75%;
     background-color: white;
     box-shadow: inset 0px 5px 0px 0px #BCBFD2;
     display:flex;
