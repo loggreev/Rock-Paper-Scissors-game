@@ -20,10 +20,7 @@ class App extends React.Component {
   selectChoice(event) {
     //the element with the event handler
     const target = event.currentTarget;
-    //get the value of the button based on the element's class that it was given
-    const type = target.children[0].className.split(" ").filter(c =>
-      c !== "circle" && c !== "outer"
-    )[0];
+    const type = target.dataset.type;
     return this.setState({ choice: type });
   }
 
@@ -31,11 +28,17 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="SelectionButton-container">
-          <SelectionButton type="rock" onclick={this.selectChoice} />
-          <SelectionButton type="paper" onclick={this.selectChoice} />
-          <SelectionButton type="scissors" onclick={this.selectChoice} />
-          <SelectionButton type="lizard" onclick={this.selectChoice} />
-          <SelectionButton type="spock" onclick={this.selectChoice} />
+          <div className="row">
+            <SelectionButton type="scissors" onclick={this.selectChoice} />
+          </div>
+          <div className="row">
+            <SelectionButton type="spock" onclick={this.selectChoice} />
+            <SelectionButton type="paper" onclick={this.selectChoice} />
+          </div>
+          <div className="row">
+            <SelectionButton type="lizard" onclick={this.selectChoice} />
+            <SelectionButton type="rock" onclick={this.selectChoice} />
+          </div>
         </div>
       </div>
     );
