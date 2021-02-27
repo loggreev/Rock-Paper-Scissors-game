@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import SelectionButton from './components/SelectionButton.js';
+import Scoresheet from './components/Scoresheet.js';
 
 class App extends React.Component {
   constructor() {
@@ -27,6 +28,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Scoresheet score={12} />
         <div className="SelectionButton-container">
           <div className="row">
             <SelectionButton type="scissors" onclick={this.selectChoice} />

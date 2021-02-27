@@ -1,11 +1,12 @@
 body{
   background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
   background-attachment: fixed;
+  font-size: 14px;
 }
 
 .SelectionButton-container{
-  margin: 0 auto;
-  width: 310px;
+  margin: 0 30px;
+  /* width: 310px; */
 }
 
 .SelectionButton-container .row{
