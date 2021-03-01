@@ -53,16 +53,18 @@ class App extends React.Component {
             <Scoresheet score={this.state.score} />
           </div>
           <div className="SelectionButton-container">
-            <div className="row">
-              <SelectionButton type="scissors" onclick={this.selectChoice} />
-            </div>
-            <div className="row">
-              <SelectionButton type="spock" onclick={this.selectChoice} />
-              <SelectionButton type="paper" onclick={this.selectChoice} />
-            </div>
-            <div className="row">
-              <SelectionButton type="lizard" onclick={this.selectChoice} />
-              <SelectionButton type="rock" onclick={this.selectChoice} />
+            <div className="row-container">
+              <div className="row">
+                <SelectionButton type="scissors" onclick={this.selectChoice} />
+              </div>
+              <div className="row">
+                <SelectionButton type="spock" onclick={this.selectChoice} />
+                <SelectionButton type="paper" onclick={this.selectChoice} />
+              </div>
+              <div className="row">
+                <SelectionButton type="lizard" onclick={this.selectChoice} />
+                <SelectionButton type="rock" onclick={this.selectChoice} />
+              </div>
             </div>
           </div>
           <div className="rulesButton" onClick={this.toggleRules}>

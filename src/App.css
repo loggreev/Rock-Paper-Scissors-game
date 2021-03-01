@@ -25,7 +25,14 @@ body{
   margin-right:auto;
 }
 
-.SelectionButton-container .row{
+.row-container{
+  background-image: url("images/bg-pentagon.svg");
+  background-repeat: no-repeat;
+  background-size: 66.67%;
+  background-position: 50% 50%;
+}
+
+.row-container .row{
   display: flex;
   justify-content: space-between;
 }
