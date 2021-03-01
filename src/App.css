@@ -13,6 +13,18 @@ body{
   justify-content: space-between;
 }
 
+.Scoresheet-container{
+  flex:1;
+}
+
+.SelectionButton-container{
+  width: 310px;
+  margin-top: 10px;
+  flex:2;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 .SelectionButton-container .row{
   display: flex;
   justify-content: space-between;
@@ -20,6 +32,7 @@ body{
 
 .row:nth-of-type(1) .SelectionButton{
   margin:auto;
+  z-index: 1; /* blocked by 2nd row otherwise */
 }
 
 .row:nth-of-type(2){
@@ -38,7 +51,10 @@ body{
   border: 3px solid rgba(255,255,255,0.33);
   border-radius: 10px;
   width: 130px;
-  margin: auto;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
   padding: 11px 0;
   text-align: center;
   line-height: 1em;

@@ -29,7 +29,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Scoresheet score={this.state.score} />
+        <div className="Scoresheet-container">
+          <Scoresheet score={this.state.score} />
+        </div>
         <div className="SelectionButton-container">
           <div className="row">
             <SelectionButton type="scissors" onclick={this.selectChoice} />
