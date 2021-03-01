@@ -4,9 +4,13 @@
   flex:2;
   margin-left:auto;
   margin-right:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .row-container{
+  width: inherit;
   background-image: url("./../images/bg-pentagon.svg");
   background-repeat: no-repeat;
   background-size: 66.67%;

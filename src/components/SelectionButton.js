@@ -27,12 +27,19 @@ function SelectionButton(props) {
         default: ;
     }
 
+    let innercircle;
+    if (type) {
+        innercircle =
+            <div className="circle inner">
+                <img src={svg} alt={type} />
+            </div>
+            ;
+    }
+
     return (
         <div className="SelectionButton" onClick={props.onclick} data-type={type}>
             <div className={"circle outer " + type}>
-                <div className="circle inner">
-                    <img src={svg} alt="" />
-                </div>
+                {innercircle}
             </div>
         </div>
     );

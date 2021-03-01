@@ -1,0 +1,57 @@
+.Versus-container{
+    margin-top: 50px;
+    flex:2;
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.choices-container{
+    display:flex;
+    flex:1;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.choice{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 1px;
+    flex-basis: 50%;
+    color:white;
+}
+
+.choice .SelectionButton{
+    margin: auto;
+}
+
+.result-container{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-container p{
+    font-size: 3.5em;
+    margin: 0.5em 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    color:white;
+}
+
+.result-container .play-again{
+    background-color: white;
+    text-align: center;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 50%;
+    padding: 15px 30px;
+    border-radius: 8px;
+    color: hsl(229, 25%, 31%);
+}

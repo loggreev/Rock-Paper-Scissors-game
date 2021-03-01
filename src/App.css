@@ -13,10 +13,6 @@ body{
   justify-content: space-between;
 }
 
-.Scoresheet-container{
-  flex:1;
-}
-
 .rulesButton{
   color: rgb(194, 194, 196);
   border: 3px solid rgba(255,255,255,0.33);

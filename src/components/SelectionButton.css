@@ -52,3 +52,7 @@
     background-color: hsl(189, 58%, 57%);
     box-shadow: inset 0px -5px 0px 0px #2E90AD;
 }
+
+.undefined{
+    background-color: rgba(0,0,0,.2);
+}
