@@ -5,7 +5,7 @@ body{
   font-family: "Barlow Semi Condensed";
 }
 
-.App{
+.game-container{
   margin: 30px;
   height: calc(100vh - 60px);
   display: flex;
