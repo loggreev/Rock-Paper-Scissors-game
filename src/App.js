@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import SelectionButton from './components/SelectionButton.js';
+import SelectionButtonContainer from './components/SelectionButtonContainer.js';
 import Scoresheet from './components/Scoresheet.js';
 import Rules from './components/Rules';
 
@@ -17,7 +17,7 @@ class App extends React.Component {
   //called when component is updates, such as on state change
   componentDidUpdate() {
     //TODO: implement
-    // console.log(this.state)
+    console.log(this.state)
   }
 
   // get the value of the button the user clicked on
@@ -52,21 +52,7 @@ class App extends React.Component {
           <div className="Scoresheet-container">
             <Scoresheet score={this.state.score} />
           </div>
-          <div className="SelectionButton-container">
-            <div className="row-container">
-              <div className="row">
-                <SelectionButton type="scissors" onclick={this.selectChoice} />
-              </div>
-              <div className="row">
-                <SelectionButton type="spock" onclick={this.selectChoice} />
-                <SelectionButton type="paper" onclick={this.selectChoice} />
-              </div>
-              <div className="row">
-                <SelectionButton type="lizard" onclick={this.selectChoice} />
-                <SelectionButton type="rock" onclick={this.selectChoice} />
-              </div>
-            </div>
-          </div>
+          <SelectionButtonContainer selectChoice={this.selectChoice} />
           <div className="rulesButton" onClick={this.toggleRules}>
             Rules
           </div>
