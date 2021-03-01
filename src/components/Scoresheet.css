@@ -1,17 +1,16 @@
 .Scoresheet{
     border: 3px solid rgba(255,255,255,0.33);
     border-radius: 5px;
-    margin: 30px;
-    padding: 20px;
+    padding: 10px;
+    height: 84px;
     display:flex;
     justify-content: space-between;
-    font-family: "Barlow Semi Condensed";
 }
 
 .choices{
     color:white;
     text-transform: uppercase;
-    margin: 2px;
+    margin: 12px;
     line-height: 0.9em; /* causes a small amount of space to appear below last <p> */
     font-weight: 600;
     /* border:1px solid white; */
@@ -24,8 +23,8 @@
 .score{
     background-color: white;
     border-radius: 5px;
-    width: 80px;
-    height: 72px;
+    height: 84px;
+    width: 84px;
 }
 
 .score p{
@@ -40,7 +39,8 @@
     letter-spacing: 1px;
     font-size: 0.8em;
     font-weight: 700;
-    margin-top: 12px;
+    margin-top: 13px;
+    margin-bottom: 6px;
 }
 
 .score .number{

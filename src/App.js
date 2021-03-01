@@ -9,12 +9,13 @@ class App extends React.Component {
     this.selectChoice = this.selectChoice.bind(this);
     this.state = {
       choice: undefined,
-      other: 1
+      score: 0
     };
   }
 
   //called when component is updates, such as on state change
   componentDidUpdate() {
+    //TODO: implement
     console.log(this.state)
   }
 
@@ -28,7 +29,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Scoresheet score={12} />
+        <Scoresheet score={this.state.score} />
         <div className="SelectionButton-container">
           <div className="row">
             <SelectionButton type="scissors" onclick={this.selectChoice} />
@@ -42,6 +43,9 @@ class App extends React.Component {
             <SelectionButton type="rock" onclick={this.selectChoice} />
           </div>
         </div>
+        <div className="rulesButton">
+          Rules
+      </div>
       </div>
     );
   }
