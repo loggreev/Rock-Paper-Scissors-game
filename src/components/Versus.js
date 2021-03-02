@@ -2,17 +2,60 @@ import './Versus.css'
 import SelectionButton from './SelectionButton.js'
 import React from 'react'
 
+const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+
 class Versus extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.gameLogic(props);
+        this.state = {
+            player_choice: this.props.choice,
+            opponent_choice: choices[Math.floor(Math.random() * choices.length)]
+        };
     }
 
-    gameLogic = (props) => {
+    componentDidMount = () => {
+        this.roulette()
+            .then(() => this.wait(750))
+            .then(() => {
+                this.gameLogic()
+                // this.displayOutcome()
+            })
+    }
+
+    wait = (duration) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve()
+            }, duration)
+        })
+    }
+
+    // fake a roulette over each choice
+    roulette = () => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                let i = 0;
+                const id = setInterval(() => {
+                    this.setState({ displayed_opponent_choice: choices[i] });
+                    i++;
+                    i %= choices.length;
+                }, 125);
+                // at least 15 rolls, at most 30
+                const rollDuration = Math.ceil(Math.random() * 15) * 125 + (125 * 15);
+                // const rollDuration = Math.floor(Math.random() * 100) + 0;
+                setTimeout(() => {
+                    clearInterval(id);
+                    this.setState({ displayed_opponent_choice: this.state.opponent_choice });
+                    resolve();
+                }, rollDuration);
+            }, 750)
+        });
+    }
+
+    gameLogic = () => {
         let outcome;
-        const player_choice = props.choice;
-        const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock']
-        const opponent_choice = choices[Math.floor(Math.random() * choices.length)];
+        const player_choice = this.state.player_choice;
+        const opponent_choice = this.state.opponent_choice;
         if (player_choice === opponent_choice)
             outcome = 0;
         else {
@@ -59,11 +102,19 @@ class Versus extends React.Component {
             outcome_message = "You Lose";
 
         this.props.updateScore(outcome);
-
-        return { player_choice: player_choice, opponent_choice: opponent_choice, outcome_message: outcome_message }
+        this.setState({ outcome_message: outcome_message, game_over: true })
     }
 
     render() {
+        let results;
+        if (this.state.game_over) {
+            results =
+                <div className="results">
+                    <p>{this.state.outcome_message}</p>
+                    <div className="play-again" onClick={() => { this.props.playAgain() }}>Play Again</div>
+                </div>
+        }
+
         return (
             <div className="Versus-container" >
                 <div className="choices-container">
@@ -72,13 +123,12 @@ class Versus extends React.Component {
                         <p>You Picked</p>
                     </div>
                     <div className="choice">
-                        <SelectionButton type={this.state.opponent_choice} />
+                        <SelectionButton type={this.state.displayed_opponent_choice} />
                         <p>The House Picked</p>
                     </div>
                 </div>
                 <div className="result-container">
-                    <p>{this.state.outcome_message}</p>
-                    <div className="play-again" onClick={() => { this.props.playAgain() }}>Play Again</div>
+                    {results}
                 </div>
             </div>
         );
