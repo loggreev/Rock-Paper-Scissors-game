@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "./static/css/main.a683fed0.chunk.css",
+    "main.js": "./static/js/main.d19377aa.chunk.js",
+    "main.js.map": "./static/js/main.d19377aa.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.55afc0e2.js",
+    "runtime-main.js.map": "./static/js/runtime-main.55afc0e2.js.map",
+    "static/js/2.6ac35e64.chunk.js": "./static/js/2.6ac35e64.chunk.js",
+    "static/js/2.6ac35e64.chunk.js.map": "./static/js/2.6ac35e64.chunk.js.map",
+    "static/js/3.4dcbeba2.chunk.js": "./static/js/3.4dcbeba2.chunk.js",
+    "static/js/3.4dcbeba2.chunk.js.map": "./static/js/3.4dcbeba2.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.a683fed0.chunk.css.map": "./static/css/main.a683fed0.chunk.css.map",
+    "static/js/2.6ac35e64.chunk.js.LICENSE.txt": "./static/js/2.6ac35e64.chunk.js.LICENSE.txt",
+    "static/media/SelectionButtonContainer.css": "./static/media/bg-pentagon.c2948f17.svg",
+    "static/media/icon-close.bde602ec.svg": "./static/media/icon-close.bde602ec.svg",
+    "static/media/icon-lizard.0f83914c.svg": "./static/media/icon-lizard.0f83914c.svg",
+    "static/media/icon-paper.8b57a6b1.svg": "./static/media/icon-paper.8b57a6b1.svg",
+    "static/media/icon-rock.476e90a9.svg": "./static/media/icon-rock.476e90a9.svg",
+    "static/media/icon-scissors.3b1a5d7e.svg": "./static/media/icon-scissors.3b1a5d7e.svg",
+    "static/media/icon-spock.f4d7eee8.svg": "./static/media/icon-spock.f4d7eee8.svg",
+    "static/media/image-rules-bonus.57e1e5af.svg": "./static/media/image-rules-bonus.57e1e5af.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.55afc0e2.js",
+    "static/js/2.6ac35e64.chunk.js",
+    "static/css/main.a683fed0.chunk.css",
+    "static/js/main.d19377aa.chunk.js"
+  ]
+}
