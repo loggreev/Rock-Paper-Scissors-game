@@ -7,31 +7,46 @@ import Versus from './components/Versus.js'
 
 class App extends React.Component {
   constructor() {
-    super()
+    super();
+    this.game_state_component = undefined;
     this.state = {
-      madeChoice: false,
+      selection: undefined,
       score: 0,
-      displayRules: false
+      displayRules: false,
+      gameState: "selection"
     };
-  }
-
-  //called when component is updated, such as on state change
-  componentDidUpdate() {
-    //TODO: implement
-    console.log(this.state)
   }
 
   // get the value of the button the user clicked on
   selectChoice = (event) => {
     //the element with the event handler
     const target = event.currentTarget;
-    const type = target.dataset.type;
-    this.setState({ madeChoice: true });
+    const selection = target.dataset.type;
+    this.setState({ selection: selection, gameState: "versus" });
   }
 
-  // updateScore = (score) => {
-  //   this.setState({ score: score })
-  // }
+  updateScore = (outcome) => {
+    this.setState({ score: this.state.score + outcome })
+  }
+
+  playAgain = () => {
+    this.setState({ gameState: "selection" })
+  }
+
+  // change the game state component to reflect the current game state
+  updateGameState = () => {
+    switch (this.state.gameState) {
+      case "selection":
+        this.game_state_component =
+          <SelectionButtonContainer selectChoice={this.selectChoice} />;
+        break;
+      case "versus":
+        this.game_state_component = <Versus choice={this.state.selection} updateScore={this.updateScore} playAgain={this.playAgain} />;
+        break;
+      default:
+        throw Error("Something bad happened!");
+    }
+  }
 
   // display or hide the game rules
   toggleRules = (event) => {
@@ -44,11 +59,13 @@ class App extends React.Component {
     }
   }
 
+  // Called every time an update occurs (on state change)
+  // Components will be rerendered, and thus all code inside them reran
   render() {
     let rules;
-    if (this.state.displayRules) {
+    if (this.state.displayRules)
       rules = <Rules onclick={this.toggleRules} />
-    }
+    this.updateGameState();
 
     return (
       <div className="App">
@@ -57,8 +74,7 @@ class App extends React.Component {
           <div className="Scoresheet-container">
             <Scoresheet score={this.state.score} />
           </div>
-          {/* <SelectionButtonContainer selectChoice={this.selectChoice} /> */}
-          <Versus type="rock" />
+          {this.game_state_component}
           <div className="rulesButton" onClick={this.toggleRules}>
             Rules
           </div>
