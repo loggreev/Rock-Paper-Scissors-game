@@ -1,6 +1,6 @@
 .Scoresheet{
     border: 3px solid rgba(255,255,255,0.33);
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
     height: 84px;
     display:flex;
@@ -47,4 +47,25 @@
     color: hsl(229, 25%, 31%);
     font-size: 3em;
     font-weight: 700;
+}
+
+@media (orientation: landscape){
+    .Scoresheet{
+        width: 50vw;
+        height: auto;
+        margin: auto;
+    }
+    .choices{
+        font-size: 1.5em;
+    }
+    .score{
+        height: auto;
+        width: 150px;
+    }
+    .score .text{
+        font-size: 1.25em;
+    }
+    .score .number{
+        font-size: 5em;
+    }
 }
