@@ -57,6 +57,7 @@
     padding: 15px 30px;
     border-radius: 8px;
     color: hsl(229, 25%, 31%);
+    cursor: pointer;
 }
 
 @media (orientation: landscape){

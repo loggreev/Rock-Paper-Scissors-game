@@ -9,6 +9,11 @@
   transform-origin: center;
 }
 
+.SelectionButton-container .SelectionButton:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 .container{
   display: flex;
   justify-content: center;

@@ -30,6 +30,7 @@ body{
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: 2px;
+  cursor: pointer;
 }
 
 @media (orientation: landscape){

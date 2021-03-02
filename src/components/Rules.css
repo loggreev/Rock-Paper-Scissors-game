@@ -33,7 +33,7 @@
 
 .Rules-container p{
     margin: 0;
-    margin-top: 15%;
+    margin-top: 50px;
     text-align: center;
     color: hsl(229, 64%, 30%);
     text-transform: uppercase;
@@ -42,10 +42,40 @@
 }
 
 #matchups{
-    min-width: 50%;
+    margin-top: 10px;
+    min-width: 35%;
     max-width: 90%;
+    margin-bottom: 20px;
 }
 
 #closebutton{
+    cursor: pointer;
     margin-bottom: 15%;
+}
+
+@media (orientation:landscape){
+    .centered{
+        min-width: 400px;
+        min-height: 460px;
+        width: 30%;
+        height: 60%;
+        padding: 37px 30px;
+        position: relative;
+    }
+
+    #matchups{
+        transform: scale(1.25);
+        margin: auto 0;
+    }
+
+    .Rules-container p{
+        margin:0;
+        align-self: flex-start;
+    }
+
+    #closebutton{
+        position: absolute;
+        margin: 0;
+        right: 30px;
+    }
 }
