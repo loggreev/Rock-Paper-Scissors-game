@@ -58,3 +58,40 @@
     border-radius: 8px;
     color: hsl(229, 25%, 31%);
 }
+
+@media (orientation: landscape){
+    .Versus-container{
+        width:70%;
+        margin: auto;
+    }
+    .choice{
+        flex:1;
+        white-space: nowrap;
+    }
+    .result-container{
+        flex:2;
+        margin: 0 75px;
+        z-index: 1;
+    }
+
+    @media (min-width: 800px) and (min-height: 380px){
+        .choice{
+        transform: scale(1.5);
+    }
+    }
+    @media (min-width: 960px) and (min-height: 440px){
+        .choice{
+        transform: scale(2);
+        }
+    }
+    @media (min-width: 1120px) and (min-height: 520px){
+        .choice{
+        transform: scale(2.5);
+        }
+    }
+    @media (min-width: 1280px) and (min-height: 600px){
+        .choice{
+        transform: scale(3);
+        }
+    }
+}

@@ -115,23 +115,46 @@ class Versus extends React.Component {
                 </div>
         }
 
-        return (
-            <div className="Versus-container" >
-                <div className="choices-container">
-                    <div className="choice">
-                        <SelectionButton type={this.state.player_choice} />
-                        <p>You Picked</p>
+        //portrait view
+        if (matchMedia("(orientation:portrait)").matches) {
+            return (
+                <div className="Versus-container" >
+                    <div className="choices-container">
+                        <div className="choice">
+                            <SelectionButton type={this.state.player_choice} />
+                            <p>You Picked</p>
+                        </div>
+                        <div className="choice">
+                            <SelectionButton type={this.state.displayed_opponent_choice} />
+                            <p>The House Picked</p>
+                        </div>
                     </div>
-                    <div className="choice">
-                        <SelectionButton type={this.state.displayed_opponent_choice} />
-                        <p>The House Picked</p>
+                    <div className="result-container">
+                        {results}
                     </div>
                 </div>
-                <div className="result-container">
-                    {results}
+            );
+        }
+        //landscape view
+        else {
+            return (
+                <div className="Versus-container" >
+                    <div className="choices-container">
+                        <div className="choice">
+                            <p>You Picked</p>
+                            <SelectionButton type={this.state.player_choice} />
+                        </div>
+                        <div className="result-container">
+                            {results}
+                        </div>
+                        <div className="choice">
+                            <p>The House Picked</p>
+                            <SelectionButton type={this.state.displayed_opponent_choice} />
+                        </div>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
 }
 
